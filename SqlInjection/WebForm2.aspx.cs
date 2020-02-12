@@ -31,14 +31,11 @@ namespace SqlInjection
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("UserName", UN);
                 command.Parameters.AddWithValue("Password", PW);
-                //
-                // var adpt = new SqlDataAdapter(command, con);
+                
                 con.Open();
                 SqlDataReader sqlDataReader = command.ExecuteReader();
 
-                //Response.Write(count);
-                //  var dt = new DataTable();
-                // adpt.Fill(dt);
+               
                 if (sqlDataReader.HasRows)
                 {
                     Response.Redirect("WebForm1.aspx");
